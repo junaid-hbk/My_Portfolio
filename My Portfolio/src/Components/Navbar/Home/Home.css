@@ -78,6 +78,7 @@ header {
 
     .myimg {
         max-width: 90%; /* Allow more width on smaller devices */
+        margin: 2rem auto; /* Adjust margin for smaller devices */
     }
 }
 
@@ -91,8 +92,13 @@ header {
         display: none; /* Hide social icons on small devices */
     }
 
+    .myimg {
+        max-width: 90%; /* Ensure the image is responsive */
+        margin-top: 1rem; /* Adjust margin on small devices */
+    }
+
     .myimg > img {
-        margin-top: 1.5rem; /* Adjust margin */
+        border-radius: 0; /* Remove border radius on small screens */
     }
 
     h1 {
