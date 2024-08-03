@@ -1,55 +1,67 @@
-header{
-    height: 100vh;
+header {
+    min-height: 100vh; /* Maintain full height */
     padding-top: 5rem;
     overflow: hidden;
-}
-.home_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    height: 100%;
-    position: relative;
-
 }
-.cta{
+
+.home_container {
+    width: 100%;
+    max-width: 1200px; /* Limit max width on larger screens */
+    padding: 0 1rem;
+}
+
+.cta {
     margin-top: 2rem;
     display: flex;
     gap: 1.2rem;
     justify-content: center;
-
+    flex-wrap: wrap; /* Allow buttons to wrap */
 }
-.social{
+
+.social {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: 3rem;
 }
-.social::after{
+
+.social::after {
     content: "";
     width: 1px;
     height: 2rem;
     background: var(--color-primary);
 }
-.myimg{
-    background:linear-gradient(rgba(3, 130, 250, 0.973),transparent);
-    width: 22rem;
-    height: 35rem;
-    position: absolute;
-    left: calc(50% - 11rem);
-    margin-top: 3rem;
-    border-radius: 12rem 12rem 0 0 ;
-    overflow: hidden;
-    padding: 1rem 1.5rem 1.5rem 1rem ;
-    
 
+.myimg {
+    background: linear-gradient(rgba(3, 130, 250, 0.973), transparent);
+    width: 100%; /* Full width for container */
+    max-width: 22rem; /* Maximum width for larger screens */
+    height: auto; /* Flexible height */
+    position: relative;
+    margin: 3rem auto; /* Center align and margin on top/bottom */
+    border-radius: 12rem 12rem 0 0; /* Border radius restored */
+    overflow: hidden; /* Hide overflow */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
 }
-.myimg > img{
-    margin-left: 0.3rem;
-    padding: 0rem;
-    
+
+.myimg > img {
+    width: 100%; /* Image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Scale image while preserving aspect ratio */
+    border-radius: 12rem 12rem 0 0; /* Restore border radius */
 }
-.scrolldown{
+
+.scrolldown {
     position: absolute;
     right: -2.3rem;
     bottom: 5rem;
@@ -57,20 +69,37 @@ header{
     font-weight: 300;
     font-size: 0.9rem;
 }
-@media screen and(max-width:1024px) {
-    header{
-        height: 60vh;
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    header {
+        min-height: 80vh; /* Reduce height on medium devices */
+    }
+
+    .myimg {
+        max-width: 90%; /* Allow more width on smaller devices */
     }
 }
-@media screen and(max-width:600px) {
-    header{
-        height: 100vh;
 
+@media screen and (max-width: 600px) {
+    header {
+        min-height: 100vh; /* Ensure full height on small devices */
+        padding-top: 3rem; /* Adjust padding */
     }
-    .social , .scrolldown{
-        display: none;
+
+    .social, .scrolldown {
+        display: none; /* Hide social icons on small devices */
     }
-    .myimg > img{
-        margin-top: 2.5rem;
+
+    .myimg > img {
+        margin-top: 1.5rem; /* Adjust margin */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce font size for better fit */
+    }
+
+    h5 {
+        font-size: 1.2rem; /* Reduce font size for better fit */
     }
 }
