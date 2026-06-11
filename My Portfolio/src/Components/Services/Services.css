@@ -1,0 +1,43 @@
+.services_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service_card {
+  background: var(--color-bg-variant);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  min-height: 260px;
+}
+
+.service_card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  background: transparent;
+}
+
+.service_card h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.service_card p {
+  color: var(--color-light);
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 1024px) {
+  .services_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services_container {
+    grid-template-columns: 1fr;
+  }
+}
